@@ -8,7 +8,7 @@ self.addEventListener('install', function (event) {
   /**
    * TODO - Part 2 Step 2
    * Create a function as outlined above
-   *
+   */
    event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
@@ -16,7 +16,6 @@ self.addEventListener('install', function (event) {
         return cache.addAll(urlsToCache);
       })
   );
-  */
 });
 
 /**
@@ -28,7 +27,7 @@ self.addEventListener('activate', function (event) {
   /**
    * TODO - Part 2 Step 3
    * Create a function as outlined above, it should be one line
-   *
+   */
    var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
    event.waitUntil(
@@ -42,7 +41,6 @@ self.addEventListener('activate', function (event) {
        );
      })
    );
-  */
 });
 
 // Intercept fetch requests and store them in the cache
@@ -50,7 +48,7 @@ self.addEventListener('fetch', function (event) {
   /**
    * TODO - Part 2 Step 4
    * Create a function as outlined above
-   *
+   */
    event.respondWith(
     caches.match(event.request)
       .then(function(response) {
@@ -82,5 +80,4 @@ self.addEventListener('fetch', function (event) {
         );
       })
     );
-  */
 });
