@@ -231,7 +231,7 @@ function bindPopstate() {
     if(ev.state == null) {
       router.navigate('home', true);
     } else {
-      router.navigate(ev.state['page_id'], true);
+      router.navigate(history.state, true);
     }
   });
 }
